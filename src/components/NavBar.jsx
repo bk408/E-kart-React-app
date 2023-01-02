@@ -3,7 +3,7 @@ import React from 'react'
 export default function NavBar() {
   return (
 
-    <nav className="navbar navbar-expand-lg bg-body-tertiary py-3">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary py-3 bg-white shadow-sm">
       <div className="container">
         <a className="navbar-brand fw-bold fs-4" href="/">Ekart</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
