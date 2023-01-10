@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 
+
 const Product = () => {
  
  const {id} = useParams();
@@ -14,6 +15,7 @@ const Product = () => {
 
  const dispatch = useDispatch();
  const addProduct = (product) => {
+  console.log(product);
   dispatch(addCart(product));
  }
 
