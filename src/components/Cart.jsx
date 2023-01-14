@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 const Cart = () => {
+
   const cart = useSelector((state) => state.cart);
   return (
     <div className="cart-container">
@@ -29,7 +30,7 @@ const Cart = () => {
             <h3 className="total">Total</h3>
           </div>
           <div className="cart-items">
-            {cart.cartItems?.map(cartItem => (
+            {cart.cartItems?.map((cartItem) => (
               <div className="cart-item" key={cartItem.id}>
                 <div className="cart-product">
                   <img src={cartItem.image} alt={cartItem.title} />

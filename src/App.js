@@ -11,6 +11,7 @@ import Cart from  './components/Cart';
 
 
 
+
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
  <Route exact path="/products" key="products" element={<Products />} />
  <Route exact path="/products/:id" key="products/:id" element={<Product />} />
  <Route exact path="/cart" key="cart" element={<Cart />} />
+ 
  </Routes>
     </>
      
