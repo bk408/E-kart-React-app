@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const NavBar = () => {
   const state = useSelector((state) => state.handleCart)
-  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
+  const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
   return (
 
     <nav className="navbar navbar-expand-lg bg-body-tertiary py-3 bg-white shadow-sm">
@@ -20,17 +20,22 @@ const NavBar = () => {
               <Link className="nav-link active" aria-current="page" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/products">Products</Link>
+              <Link className="nav-link ms-5" to="/products">Products</Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/about">About</Link>
+              <Link className="nav-link ms-5" to="/about">About</Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/contact">Contact</Link>
+              <Link className="nav-link ms-5" to="/contact">Contact</Link>
             </li>
           </ul>
+           
+          <div className="navbar-nav mx-auto my-2 mb-lg-0 btn-dark">
+
+          {isAuthenticated && <h6>{user.name}</h6>}
+          </div>
 
           <div className="buttons">
 
@@ -40,14 +45,6 @@ const NavBar = () => {
               <button className="btn btn-outline-dark" onClick={() => loginWithRedirect()}>
               <i className="fa fa-sign-in me-1"></i>Log In</button>
             )}
-
-            
-
-            
-
-
-            <Link to="/signup" className="btn btn-outline-dark ms-2">
-              <i className="fa fa-user-plus me-1"></i> Signup</Link>
 
             <Link to="/cart" className="btn btn-outline-dark ms-2">
               <i className="fa-solid fa-cart-shopping me-1"></i>{state.length}</Link>
