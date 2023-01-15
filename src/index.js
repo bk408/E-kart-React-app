@@ -16,10 +16,14 @@ import {
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const domain = process.env.REACT_APP_AUTH_DOMAIN;
+const clientId = process.env.REACT_APP_AUTH_CLIENT_ID;
+
 root.render(
   <Auth0Provider
-    domain="dev-283bsq5kkozknldw.us.auth0.com"
-    clientId="Gu3GybEcHYfpyAecMwaaclZkgBTSWhvh"
+    domain={domain}
+    clientId={clientId}
     redirectUri={window.location.origin}
   >
   <Router>
