@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
@@ -13,9 +14,12 @@ const Product = () => {
  const [loading, setLoading] = useState(false);
 
  const dispatch  = useDispatch();
+ const navigate = useNavigate();
+
 
  const handleAddToCart = (product) => {
-     dispatch(addToCart(product))
+     dispatch(addToCart(product));
+     navigate.push("/cart"); 
  };
 
 
