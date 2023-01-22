@@ -35,8 +35,8 @@ const Cart = () => {
                 <div className="cart-product">
                   <img src={cartItem.image} alt={cartItem.title} />
                   <div>
-                    <h3>{cartItem.name}</h3>
-                    <p>{cartItem.description}</p>
+                    <h3>{cartItem.title}</h3>
+                    
                     <button>Remove</button>
                   </div>
                 </div>
