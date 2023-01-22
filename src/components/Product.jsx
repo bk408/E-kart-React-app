@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import { useDispatch } from 'react-redux';
-import { addCart } from '../redux/action';
+import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
+import { addToCart } from '../redux/cartSlice';
 
 
 const Product = () => {
@@ -12,11 +13,14 @@ const Product = () => {
  const [product, setProduct] = useState([]);
  const [loading, setLoading] = useState(false);
 
+ const dispatch  = useDispatch();
+ const navigate = useNavigate();
 
- const dispatch = useDispatch();
- const addProduct = (product) => {
-  dispatch(addCart(product));
- }
+
+ const handleAddToCart = (product) => {
+     dispatch(addToCart(product));
+     navigate.push("/cart"); 
+ };
 
 
  useEffect (() => {
@@ -78,7 +82,7 @@ const Product = () => {
                 $ {product.price}
             </h3>
             <p className="lead">{product.description}</p>
-            <button className="btn btn-outline-dark px-4 py-2" onClick={()=>addProduct(product)} >Add to Cart</button>
+            <button className="btn btn-outline-dark px-4 py-2" onClick={()=> handleAddToCart(product)} >Add to Cart</button>
             <Link to="/cart" className="btn btn-dark ms-2 px-3 py-2">Go to Cart</Link>
            </div>
 

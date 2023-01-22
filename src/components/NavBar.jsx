@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useAuth0 } from "@auth0/auth0-react";
 
 const NavBar = () => {
-  const state = useSelector((state) => state.handleCart)
+  
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
   return (
 
@@ -47,7 +47,7 @@ const NavBar = () => {
             )}
 
             <Link to="/cart" className="btn btn-outline-dark ms-2">
-              <i className="fa-solid fa-cart-shopping me-1"></i>{state.length}</Link>
+              <i className="fa-solid fa-cart-shopping me-1"></i></Link>
 
           </div>
 

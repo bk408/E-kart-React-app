@@ -1,9 +1,11 @@
 import './App.css';
+import "react-toastify/dist/ReactToastify.css";
+
 import NavBar from './components/NavBar';
 import Home from './components/Home';
-
-
 import { Routes, Route, } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+
 import Products from './components/Products';
 import Product from './components/Product';
 import Cart from  './components/Cart';
@@ -12,9 +14,11 @@ import Cart from  './components/Cart';
 
 
 
+
 function App() {
   return (
     <>
+    <ToastContainer />
 <NavBar />
     
  <Routes>
