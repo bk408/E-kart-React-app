@@ -19,20 +19,17 @@ const Product = () => {
 
  const handleAddToCart = (product) => {
      dispatch(addToCart(product));
-     navigate.push("/cart"); 
+     navigate("/cart"); 
  };
 
 
  useEffect (() => {
-
+  
     const getProduct = async () => {
         setLoading(true);
         const response = await fetch(`https://fakestoreapi.com/products/${id}`);
           setProduct(await response.json());
           setLoading(false);
-       
-
-
     }
 
 

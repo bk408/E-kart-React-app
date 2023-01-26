@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addToCart, decreaseCart, removeFromCart } from '../redux/cartSlice';
+import { addToCart, clearCart, decreaseCart, removeFromCart } from '../redux/cartSlice';
 
 
 const Cart = () => {
@@ -20,12 +20,16 @@ const Cart = () => {
        dispatch(addToCart(cartItem));
   };
 
+  const handleClearCart = () => {
+    dispatch(clearCart());
+  };
+
   return (
     <div className="cart-container">
-      <h2>Shopping Cart</h2>
+      <h2>My Cart</h2>
       {cart.cartItems.length === 0 ? (
         <div className="cart-empty">
-          <p>Your cart is currently empty</p>
+          <p>Your cart is empty! </p>
           <div className="start-shopping">
             <Link to="/">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
@@ -58,7 +62,7 @@ const Cart = () => {
                 <div className="cart-product-quantity">
                   <button onClick = {() => handleDecreaseCart(cartItem)} >-</button>
                   <div className="count">{cartItem.cartQuantity}</div>
-                  <button onClick={(handleIncreaseCart(cartItem))} >+</button>
+                  <button onClick={() => handleIncreaseCart(cartItem)} >+</button>
                 </div>
                 <div className="cart-product-total-price">
                   ${cartItem.price * cartItem.cartQuantity}
@@ -67,7 +71,7 @@ const Cart = () => {
             ))}
           </div>
           <div className="cart-summary">
-            <button className="clear-cart">Clear Cart</button>
+            <button className="clear-cart" onClick={() => handleClearCart()} >Clear Cart</button>
             <div className="cart-checkout">
               <div className="subtotal">
                 <span>Subtotal</span>
