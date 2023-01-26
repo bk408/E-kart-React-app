@@ -1,7 +1,7 @@
 
 import productsReducer from './productSlice';
 import { configureStore } from '@reduxjs/toolkit';
-import cartReducer from './cartSlice';
+import cartReducer, { getTotals } from './cartSlice';
 
 const store = configureStore({
     reducer: {
@@ -9,6 +9,8 @@ const store = configureStore({
         cart: cartReducer,
     },
 });
+
+store.dispatch(getTotals());
 
 
 
