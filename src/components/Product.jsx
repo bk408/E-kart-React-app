@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import { addToCart } from '../redux/cartSlice';
 
@@ -80,7 +79,7 @@ const Product = () => {
             </h3>
             <p className="lead">{product.description}</p>
             <button className="btn btn-outline-dark px-4 py-2" onClick={()=> handleAddToCart(product)}>Add to Cart</button>
-            <Link to="/cart" className="btn btn-dark ms-2 px-3 py-2">Go to Cart</Link>
+            
            </div>
 
         </>
