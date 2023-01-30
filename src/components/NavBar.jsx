@@ -40,7 +40,7 @@ const NavBar = () => {
           <div className="buttons">
 
             {isAuthenticated ?<button className="btn btn-outline-dark ms-2" onClick={() => logout({ returnTo: window.location.origin })}>
-            <i class="fa-solid fa-right-from-bracket"></i>Log Out</button> :(
+            <i className="fa-solid fa-right-from-bracket"></i>Log Out</button> :(
               
               <button className="btn btn-outline-dark" onClick={() => loginWithRedirect()}>
               <i className="fa fa-sign-in me-1"></i>Log In</button>
