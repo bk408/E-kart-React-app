@@ -1,14 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+
+
 const About = () => {
   return (
     <div className="container mt-5 ">
       <div className="row align-items-center">
         <div className="col">
-          <p className="intro-data">Welcome to</p>
-          <h1>Ekart</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione itaque obcaecati quis est maiores! Laborum molestiae quis debitis explicabo tenetur.</p>
+          
+          <h1>About EKart</h1>
+          <p>EKart is a one-stop online shopping destination, offering a wide range of products at affordable prices. Our mission is to make shopping easy, convenient, and accessible to everyone. With a user-friendly website and a vast selection of products, we strive to provide a seamless shopping experience to our customers.</p>
+          <p>From fashion and electronics to home goods and groceries, we have everything you need in one place. Our products are carefully selected and regularly updated to keep up with the latest trends and customer demands. Our commitment to quality, affordability, and customer satisfaction is what sets us apart from the rest.</p>
+          <p>Shop with EKart today and experience the best in online shopping.</p>
           <Link to="/">
           <button className="btn btn-outline-dark">
           <i className="fa-sharp fa-solid fa-cart-plus me-1"></i>Shop Now</button>
