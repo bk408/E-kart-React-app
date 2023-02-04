@@ -53,7 +53,7 @@ const cartSlice = createSlice({
             if(state.cartItems[itemIndex].cartQuantity > 1){
                 state.cartItems[itemIndex].cartQuantity -= 1
 
-                toast.info(`Decreased product quantity`, {
+                toast.error(`Decreased product quantity`, {
                     position: "bottom-left",
                 });
             } else if (state.cartItems[itemIndex].cartQuantity === 1){
@@ -72,7 +72,7 @@ const cartSlice = createSlice({
 
         clearCart(state, action){
             state.cartItems = [];
-            toast.error(`Cart cleared`, {
+            toast.error(`Your cart is empty`, {
                 position: "bottom-left",
                });
                localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
