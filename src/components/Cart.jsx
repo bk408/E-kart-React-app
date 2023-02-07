@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { addToCart, clearCart, decreaseCart, getTotals, removeFromCart } from '../redux/cartSlice';
+import PayButton from './PayButton';
 
 
 const Cart = () => {
@@ -83,7 +84,7 @@ const Cart = () => {
                 <span className="amount">${cart.cartTotalAmount}</span>
               </div>
               <p>Taxes and shipping calculated at checkout</p>
-              <button>Check out</button>
+              <PayButton cartItems = {cart.cartItems} />
               <div className="continue-shopping">
                 <Link to="/">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">

@@ -13,6 +13,7 @@ import Product from './components/Product';
 import Cart from  './components/Cart';
 import About from './components/About';
 import Contact from './components/Contact';
+import CheckoutSuccess from './components/CheckoutSuccess';
 
 
 
@@ -32,6 +33,7 @@ function App() {
  <Route exact path="/products" key="products" element={<Products />} />
  <Route exact path="/products/:id" key="products/:id" element={<Product />} />
  <Route exact path="/cart" key="cart" element={<Cart />} />
+ <Route exact path="/checkout-success" key="checkout-success" element={<CheckoutSuccess />} />
  <Route exact path="/about" key="about" element={<About />} />
  <Route exact path="/contact" key="contact" element={<Contact />} />
  </Routes>
